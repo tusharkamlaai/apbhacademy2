@@ -3,11 +3,18 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Video, BrickWall, Users } from 'lucide-react';
 import { courses } from '../components/data/data';
+import { Input } from "@/components/ui/input"
 // name
-const PageClient = () => {
+const page = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [data, setData] = useState(courses);
     const [selectedType, setSelectedType] = useState(null);
+    const [searchData, setSearchData] = useState('')
+
+    const filterData = data.filter((item) =>
+        item.name.toLowerCase().includes(searchData.toLowerCase()) ||
+        item.type.toLowerCase().includes(searchData.toLowerCase())
+    )
 
     useEffect(() => {
         const handleResize = () => {
@@ -66,11 +73,18 @@ const PageClient = () => {
                 <div className="p-5">
                     <div className='text-center'>
                         <span className='block text-gray-700 text-2xl mb-2 font-semibold'> {selectedType || 'All Courses'}</span>
+                        <span className='justify-center flex items-center mt-7'>
+                            <Input type="text"
+                                onChange={(e) => setSearchData(e.target.value)}
+                                value={searchData}
+                                placeholder="Search..."
+                                className="w-[30%] " />
+                        </span>
                     </div>
                     <div className="px-5 flex justify-center mt-10">
                         <div className="grid lg:grid-cols-3 grid-cols-1 md:grid-cols-2 gap-4">
                             {
-                                data.filter(item => !selectedType || item.type === selectedType).map((item, index) => (
+                                filterData.filter(item => !selectedType || item.type === selectedType).map((item, index) => (
                                     <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden max-w-sm">
                                         <img src={item.imageUrl} alt="Property Image" className="w-full h-48 object-cover" />
                                         <div className="p-4">
@@ -105,4 +119,4 @@ const PageClient = () => {
     );
 };
 
-export default PageClient;
+export default page;
