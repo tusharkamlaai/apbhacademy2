@@ -9,8 +9,10 @@
 
 body {
   /* font-family: 'Poppins', sans-serif; */
-    font-family: 'Poppins', sans-serif;
-    font-family: 'Raleway', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  /* background: #faf5ff; */
+  /* color: white !important; */
 }
 
 
@@ -42,6 +44,7 @@ body {
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
+
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
@@ -84,9 +87,12 @@ body {
 
 
 .prevent-select {
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */
+  -webkit-user-select: none;
+  /* Safari */
+  -ms-user-select: none;
+  /* IE 10 and IE 11 */
+  user-select: none;
+  /* Standard syntax */
 }
 
 
@@ -104,19 +110,30 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey; 
+  box-shadow: inset 0 0 5px grey;
   border-radius: 10px;
 }
- 
+
 ::-webkit-scrollbar-thumb {
-  background: grey; 
+  background: grey;
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: grey; 
+  background: grey;
 }
 
 
 
+.dark {
+  background: rgb(17 24 39) !important;
+  color: #fff !important;
+}
 
+.light {
+  background-color: white !important;
+}
+
+.customBlack{
+  color: black;
+}

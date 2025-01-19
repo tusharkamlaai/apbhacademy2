@@ -1,5 +1,5 @@
 'use client'
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useContext } from 'react';
 import Image from 'next/image';
 import logo from '../../assets/logo.png';
 import language from '../../assets/language.png';
@@ -11,6 +11,9 @@ import nextArrow from '../../assets/next.png';
 import { useRouter } from 'next/navigation'
 import { Button } from "@/components/ui/button"
 import Link from 'next/link'
+import { DarkModeContext } from '../../context/DarkModeTheme';
+import { darkButtonSvg, lightButtonSvg } from '../data/svg';
+import { Languages } from 'lucide-react';
 
 const Navbar = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -18,7 +21,9 @@ const Navbar = () => {
     const dropdownRef = useRef(null);
     const router = useRouter()
     const [menuOpen, setMenuOpen] = useState(false);
+    const { isDarkMode, toggleDarkMode } = useContext(DarkModeContext);
 
+    console.log(isDarkMode, "helllo")
 
     const handleLinkClick = () => {
         setMenuOpen(false);
@@ -43,11 +48,14 @@ const Navbar = () => {
 
     return (
         <div className='lg:mb-[104px] navbar '>
-            <nav className="fixed z-[10000] top-0 left-0 right-0 bg-white shadow-md flex items-center justify-between flex-wrap p-4 lg:px-[50px]">
+            <nav className={`fixed z-[10000] top-0 left-0 right-0 ${isDarkMode ? 'bg-customGray' : 'bg-white'} shadow-md flex items-center justify-between flex-wrap p-4 lg:px-[50px]`}>
                 <div className="flex items-center flex-shrink-0 text-white mr-6">
                     <Link href='/'> <Image src={logo} alt="" className="lg:w-[160px] w-[130px]" /></Link>
                 </div>
                 <div className=" lg:hidden flex items-center gap-4">
+                    <button onClick={toggleDarkMode} >
+                        <span>{isDarkMode ? darkButtonSvg : lightButtonSvg}</span>
+                    </button>
                     <button>
                         <Link href='/language'><Image src={language} alt="Language" className="w-[25px]" /></Link>
                     </button>
@@ -64,8 +72,8 @@ const Navbar = () => {
                                 onClick={() => setIsDropdownOpen((prev) => !prev)}
                                 className="block mt-4 lg:inline-block lg:mt-0 text-[#140342] hover:text-black text-[16px] mr-4"
                             >
-                                <div className="flex items-center justify-center">
-                                    <Link href='/courses'><span className="mr-1" onClick={handleLinkClick}>Courses</span></Link>
+                                <div className={"flex items-center justify-center"}>
+                                    <Link href='/courses'><span className={` ${isDarkMode ? 'text-white' : ""} mr-1`} onClick={handleLinkClick}>Courses</span></Link>
                                     {/* <Image
                                         src={isDropdownOpen ? downArrow : nextArrow}
                                         alt="Dropdown Arrow"
@@ -122,36 +130,31 @@ const Navbar = () => {
                                 </div>
                             )} */}
                             <div className="block mt-4 lg:inline-block lg:mt-0 text-[#140342] hover:text-black text-[16px] mr-4">
-                                <Link href='/faq' onClick={handleLinkClick}> FAQs</Link>
+                                <Link href='/faq' className={` ${isDarkMode ? 'text-white' : ""} `} onClick={handleLinkClick}> FAQs</Link>
+                            </div>
+
+                            <div className="block mt-4 lg:inline-block lg:mt-0 text-[#140342] hover:text-black text-[16px] mr-4">
+                                <Link href='/blog' className={` ${isDarkMode ? 'text-white' : ""} `} onClick={handleLinkClick}> Blog</Link>
                             </div>
 
                         </div>
-                        <Link
-                            onClick={handleLinkClick}
-                            href="/blog"
-                            className="block mt-4 lg:inline-block lg:mt-0 text-[#140342] hover:text-black text-[16px]"
-                        >
-                            Blog
-                        </Link>
+
                         <Link onClick={handleLinkClick} href='/auth/login'>  <button variant="outline" className="block lg:hidden mt-4 px-6 py-3  bg-purple-50 h-[3rem] ">
                             Login
                         </button></Link>
                     </div>
-                    <div className="hidden lg:flex gap-9">
-                        {/* <button>
-                            <Image src={ask} alt="Ask" className="w-[30px]" />
-                        </button> */}
-                        <button>
-                            <Link href='/language'><Image src={language} alt="Language" className="w-[30px]" /></Link>
-                        </button>
-                        {/* <div className="border border-black h-[50px]"></div> */}
-                        {/* <button className="relative group px-6 py-3 font-semibold text-lg text-white bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg shadow-lg hover:shadow-2xl hover:from-purple-700 hover:to-blue-700 transition-all duration-300 ease-in-out">
-                            <span className="absolute inset-0 bg-gradient-to-r from-purple-700 to-blue-700 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-                            <span className="relative">Login</span>
-                        </button> */}
+                    <div className="hidden lg:flex gap-6">
 
-                        <Link href='/auth/login'> <Button variant="outline" className=" bg-purple-50 h-[3rem]" >Login</Button></Link>
-                        <Link href='/profile'> <Button variant="outline" className=" bg-purple-50 h-[3rem]" >Profile</Button></Link>
+                        <button onClick={toggleDarkMode} >
+                            <span>{isDarkMode ? darkButtonSvg : lightButtonSvg}</span>
+                        </button>
+                        <button>
+                            <Link href='/language'><Languages className="w-[30px]" /></Link>
+                        </button>
+
+                        <Link href='/auth/login'> <Button variant="outline" className={` bg-purple-50 h-[3rem] ${isDarkMode ? "text-black" : ""}`} >Login</Button></Link>
+                        <Link href='/profile'> <Button variant="outline" className={` bg-purple-50 h-[3rem] ${isDarkMode ? "text-black" : ""}`} >Profile</Button></Link>
+
                     </div>
                 </div>
             </nav>
