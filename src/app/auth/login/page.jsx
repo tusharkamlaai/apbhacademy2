@@ -27,7 +27,7 @@ const LoginPage = () => {
                         <form>
                             <div className="grid w-full items-center gap-6 mt-5">
                                 <div className="flex flex-col space-y-2">
-                                    <Label htmlFor="phone" className="text-sm font-medium text-gray-700">
+                                    <Label htmlFor="phone" className="text-sm dark:text-white font-medium text-gray-700">
                                         Phone:
                                     </Label>
                                     <Input
@@ -43,7 +43,7 @@ const LoginPage = () => {
                     <CardFooter className="flex justify-center mt-5">
                         <Button
                             variant="outline"
-                            className="w-[15rem] bg-purple-50 h-[3rem]"
+                            className="w-[15rem] bg-purple-50 h-[3rem] dark:text-black dark:hover:text-white"
                         >
                             Submit
                         </Button>

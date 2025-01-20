@@ -11,6 +11,8 @@ import nextArrow from '../../assets/next.png';
 import { useRouter } from 'next/navigation'
 import { Button } from "@/components/ui/button"
 import Link from 'next/link'
+import { DarkModeButton } from '../customUi/DarkModeButton';
+import { Languages, Menu, X } from 'lucide-react';
 
 const Navbar = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -43,17 +45,20 @@ const Navbar = () => {
 
     return (
         <div className='lg:mb-[104px] navbar '>
-            <nav className="fixed z-[10000] top-0 left-0 right-0 bg-white shadow-md flex items-center justify-between flex-wrap p-4 lg:px-[50px]">
+            <nav className="fixed z-[10] top-0 left-0 right-0 bg-white dark:bg-customGray shadow-md flex items-center justify-between flex-wrap p-4 lg:px-[50px]">
                 <div className="flex items-center flex-shrink-0 text-white mr-6">
-                    <Link href='/'> <Image src={logo} alt="" className="lg:w-[160px] w-[130px]" /></Link>
+                    <Link href='/'> <Image src={logo} alt="" className="lg:w-[160px] w-[100px]" /></Link>
                 </div>
-                <div className=" lg:hidden flex items-center gap-4">
+                <div className=" lg:hidden flex items-center gap-3">
+                    <Link href='/auth/login'> <Button variant="outline" className=" lg:hidden bg-purple-50 h-[35px]  px-3 py-1 block dark:text-black  dark:hover:text-white" >Login</Button></Link>
+
+                    {/* <DarkModeButton /> */}
                     <button>
-                        <Link href='/language'><Image src={language} alt="Language" className="w-[25px]" /></Link>
+                        <Link href='/language'>   <Languages /></Link>
                     </button>
                     <div className="ml-auto">
-                        <button onClick={menuBar} className="flex items-center px-3 py-2  ">
-                            <div>{menuOpen ? <Image src={close} alt="Ask" className="w-[25px]" /> : <Image src={hamburger} alt="Ask" className="w-[25px]" />}</div>
+                        <button onClick={menuBar} className="flex items-center px-2 py-2  ">
+                            <div>{menuOpen ? <X /> : <Menu />}</div>
                         </button>
                     </div>
                 </div>
@@ -65,7 +70,7 @@ const Navbar = () => {
                                 className="block mt-4 lg:inline-block lg:mt-0 text-[#140342] hover:text-black text-[16px] mr-4"
                             >
                                 <div className="flex items-center justify-center">
-                                    <Link href='/courses'><span className="mr-1" onClick={handleLinkClick}>Courses</span></Link>
+                                    <Link href='/courses'><span className="mr-1 dark:text-white" onClick={handleLinkClick}>Courses</span></Link>
                                     {/* <Image
                                         src={isDropdownOpen ? downArrow : nextArrow}
                                         alt="Dropdown Arrow"
@@ -121,7 +126,7 @@ const Navbar = () => {
                                     </a>
                                 </div>
                             )} */}
-                            <div className="block mt-4 lg:inline-block lg:mt-0 text-[#140342] hover:text-black text-[16px] mr-4">
+                            <div className="block dark:text-white mt-4 lg:inline-block lg:mt-0 text-[#140342] hover:text-black text-[16px] mr-4">
                                 <Link href='/faq' onClick={handleLinkClick}> FAQs</Link>
                             </div>
 
@@ -129,29 +134,25 @@ const Navbar = () => {
                         <Link
                             onClick={handleLinkClick}
                             href="/blog"
-                            className="block mt-4 lg:inline-block lg:mt-0 text-[#140342] hover:text-black text-[16px]"
+                            className="block dark:text-white mt-4 lg:inline-block lg:mt-0 text-[#140342] hover:text-black text-[16px]"
                         >
                             Blog
                         </Link>
-                        <Link onClick={handleLinkClick} href='/auth/login'>  <button variant="outline" className="block lg:hidden mt-4 px-6 py-3  bg-purple-50 h-[3rem] ">
-                            Login
-                        </button></Link>
+                        <div className='lg:hidden mt-3'>
+                        <DarkModeButton />
+                        </div>
                     </div>
-                    <div className="hidden lg:flex gap-9">
-                        {/* <button>
-                            <Image src={ask} alt="Ask" className="w-[30px]" />
-                        </button> */}
+                    <div className="hidden lg:flex gap-5">
+                        <span className='lg:mt-2'>
+                            <DarkModeButton />
+                        </span>
                         <button>
-                            <Link href='/language'><Image src={language} alt="Language" className="w-[30px]" /></Link>
+                            {/* <Link href='/language'><Image src={language} alt="Language" className="w-[30px]" /></Link> */}
+                            <Link href='/language'>   <Languages /></Link>
                         </button>
-                        {/* <div className="border border-black h-[50px]"></div> */}
-                        {/* <button className="relative group px-6 py-3 font-semibold text-lg text-white bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg shadow-lg hover:shadow-2xl hover:from-purple-700 hover:to-blue-700 transition-all duration-300 ease-in-out">
-                            <span className="absolute inset-0 bg-gradient-to-r from-purple-700 to-blue-700 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-                            <span className="relative">Login</span>
-                        </button> */}
 
-                        <Link href='/auth/login'> <Button variant="outline" className=" bg-purple-50 h-[3rem]" >Login</Button></Link>
-                        <Link href='/profile'> <Button variant="outline" className=" bg-purple-50 h-[3rem]" >Profile</Button></Link>
+                        <Link href='/auth/login'> <Button variant="outline" className=" bg-purple-50 h-[3rem] dark:text-black dark:hover:text-white" >Login</Button></Link>
+                        {/* <Link href='/profile'> <Button variant="outline" className=" bg-purple-50 h-[3rem]" >Profile</Button></Link> */}
                     </div>
                 </div>
             </nav>

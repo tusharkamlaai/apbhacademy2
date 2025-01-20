@@ -96,7 +96,7 @@ const Map = () => {
     return (
         <>
             <div className='text-center lg:mt-[4rem] mt-[4rem]'>
-                <span className='block text-gray-700 text-2xl mb-8 font-semibold'>Our Presence</span>
+                <span className='block text-gray-700 text-2xl mb-8 font-semibold dark:text-white'>Our Presence</span>
             </div>
             <div className='justify-center flex py-3'>
                 <MapContainer center={[20.5937, 78.9629]} zoom={5} className='lg:h-[70vh] lg:w-[80%]  h-[50vh] w-[80%]' scrollWheelZoom={isMapFocused}>

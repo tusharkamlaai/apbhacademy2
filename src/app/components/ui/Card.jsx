@@ -81,7 +81,7 @@ const Card = () => {
     return (
         <>
             <div className='text-center lg:mt-[4rem] mt-[4rem]'>
-                <span className="block text-gray-700 text-2xl mb-2 font-semibol">Explore Course Categories</span>
+                <span className="block text-gray-700 text-2xl mb-2 font-semibol dark:text-white">Explore Course Categories</span>
                 <span>Courses available in 11 languages</span>
             </div>
 
@@ -114,7 +114,7 @@ const Card = () => {
                 </Carousel>
             </div>
             <div className='text-center mt-[35px] mb-5'>
-                <Link href='/courses'> <Button variant="outline" className=" w-[15rem] bg-purple-50 h-[3rem]" >Browse All Courses</Button></Link>
+                <Link href='/courses'> <Button variant="outline" className="dark:text-black dark:hover:text-white w-[15rem] bg-purple-50 h-[3rem]" >Browse All Courses</Button></Link>
             </div>
         </>
     )

@@ -125,15 +125,19 @@ body {
 
 
 
-.dark {
+/* .dark {
   background: rgb(17 24 39) !important;
   color: #fff !important;
 }
 
 .light {
   background-color: white !important;
-}
+} */
 
-.customBlack {
+/* .customBlack {
   color: black;
+} */
+
+.dark{
+   background-color: rgb(32, 35, 42);
 }

@@ -38,7 +38,7 @@ const Training = () => {
                 <span className='block text-gray-700 lg:text-2xl text-xl mb-2 font-semibold'>For Online Training and Certification</span>
             </div>
             <div className='text-center mt-[35px] mb-5'>
-                <Button variant="outline" className="w-[15rem] bg-purple-50 h-[3rem]" >Visit Vitual BH Academy</Button>
+                <Button variant="outline" className="w-[15rem]  bg-purple-50 h-[3rem]" >Visit Vitual BH Academy</Button>
             </div>
         </>
     )

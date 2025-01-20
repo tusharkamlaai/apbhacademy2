@@ -21,11 +21,11 @@ export default function page() {
     };
 
     return (
-        <div className="min-h-screen  py-10 px-6">
-            <div className="max-w-3xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
+        <div className="min-h-screen  py-10 px-6 mt-20">
+            <div className="max-w-3xl mx-auto bg-white dark:bg-slate-800 shadow-lg rounded-lg overflow-hidden">
                 {/* Header Section */}
                 <div className="relative">
-                    <div className="bg-purple-50 h-32"></div>
+                    <div className="bg-purple-50 h-32 dark:bg-slate-400"></div>
                     <img
                         src={profile.avatar}
                         alt="User Avatar"
@@ -38,7 +38,7 @@ export default function page() {
                     {isEditing ? (
                         <div className="space-y-4">
                             <div>
-                                <label className="block text-sm font-medium text-gray-600">Name</label>
+                                <label  className="block dark:text-white text-sm font-medium text-gray-600">Name</label>
                                 <input
                                     type="text"
                                     name="name"
@@ -48,7 +48,7 @@ export default function page() {
                                 />
                             </div>
                             <div>
-                                <label className="block text-sm font-medium text-gray-600">Phone</label>
+                                <label className="block dark:text-white text-sm font-medium text-gray-600">Phone</label>
                                 <input
                                     type="text"
                                     name="phone"
@@ -58,7 +58,7 @@ export default function page() {
                                 />
                             </div>
                             <div>
-                                <label className="block text-sm font-medium text-gray-600">Location</label>
+                                <label className="block dark:text-white text-sm font-medium text-gray-600">Location</label>
                                 <input
                                     type="text"
                                     name="location"
@@ -68,7 +68,7 @@ export default function page() {
                                 />
                             </div>
                             <div>
-                                <label className="block text-sm font-medium text-gray-600">Profession</label>
+                                <label className="block dark:text-white text-sm font-medium text-gray-600">Profession</label>
                                 <input
                                     type="text"
                                     name="profession"
@@ -81,17 +81,17 @@ export default function page() {
                     ) : (
                         <div className="space-y-6">
                             <div>
-                                <h1 className="text-2xl font-bold text-gray-800">{profile.name}</h1>
-                                <p className="text-sm text-gray-500">Profession: {profile.profession}</p>
+                                <h1 className="text-2xl dark:text-white font-bold text-gray-800">{profile.name}</h1>
+                                <p className="text-sm dark:text-white text-gray-500">Profession: {profile.profession}</p>
                             </div>
                             <div className="grid grid-cols-2 gap-4">
                                 <div>
-                                    <h3 className="text-sm font-medium text-gray-600">Phone</h3>
-                                    <p className="text-gray-800">{profile.phone}</p>
+                                    <h3 className="text-sm dark:text-white font-medium text-gray-600">Phone</h3>
+                                    <p className="text-gray-800 dark:text-white">{profile.phone}</p>
                                 </div>
                                 <div>
-                                    <h3 className="text-sm font-medium text-gray-600">Location</h3>
-                                    <p className="text-gray-800">{profile.location}</p>
+                                    <h3 className="text-sm font-medium dark:text-white text-gray-600">Location</h3>
+                                    <p className="text-gray-800 dark:text-white">{profile.location}</p>
                                 </div>
                             </div>
                         </div>
@@ -99,7 +99,7 @@ export default function page() {
                 </div>
 
                 {/* Footer */}
-                <div className="bg-gray-50 py-4 px-6 flex justify-end">
+                <div className="bg-gray-50 py-4 px-6 flex justify-end dark:bg-slate-600">
                     <Button
                         onClick={handleEditToggle}
                     >

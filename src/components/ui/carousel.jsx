@@ -158,7 +158,7 @@ const CarouselPrevious = React.forwardRef(({ className, variant = "outline", siz
       variant={variant}
       size={size}
       className={cn("absolute  lg:h-11 lg:w-11 h-8 w-8 rounded-full",
-        "bg-gray-800 border-2 border-gray-700",
+        "bg-gray-800 border-2 border-gray-700 dark:border-white dark:bg-gray-70",
         "hover:bg-gray-700 hover:border-gray-600",
         orientation === "horizontal"
           ? "-left-12 top-1/2 -translate-y-1/2"
@@ -182,7 +182,7 @@ const CarouselNext = React.forwardRef(({ className, variant = "outline", size = 
       variant={variant}
       size={size}
       className={cn("absolute lg:h-11 lg:w-11 h-8 w-8 rounded-full",
-        "bg-gray-800 border-2 border-gray-700",
+        "bg-gray-800 border-2 border-gray-700 dark:border-white dark:bg-gray-700",
         "hover:bg-gray-700 hover:border-gray-600",
         orientation === "horizontal"
           ? "-right-12 top-1/2 -translate-y-1/2"

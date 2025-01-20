@@ -42,20 +42,20 @@ const PremiumAccordion = () => {
     };
 
     return (
-        <div className="h-[100vh] bg-purple-50">
+        <div className="h-[100vh] bg-purple-50 dark:bg-customDark ">
             <div className='text-center mt-[6rem] py-5'>
-                <span className='block text-gray-700 text-2xl mb-2 font-semibold'>Frequently Asked Questions.</span>
+                <span className='block text-gray-700 text-2xl mb-2 font-semibold dark:text-white'>Frequently Asked Questions.</span>
             </div>
-            <div className="lg:w-[80%] w-[90%] mx-auto mt-6 bg-white border border-gray-200 rounded-lg shadow-lg">
+            <div className="lg:w-[80%] w-[90%] mx-auto mt-6 bg-white border border-gray-200 rounded-[2px] shadow-lg">
                 {accordionData.map((item, index) => (
                     <div key={index} className="border-b border-gray-300">
                         <button
-                            className="w-full flex justify-between items-center py-4 px-6 bg-white"
+                            className="w-full flex justify-between items-center py-4 px-6 bg-white dark:bg-slate-800"
                             onClick={() => handleToggle(index)}
                         >
-                            <span className="text-lg font-semibold text-gray-800">{item.question}</span>
+                            <span className="text-lg font-semibold text-gray-800 dark:text-white">{item.question}</span>
                             <svg
-                                className={`w-5 h-5 text-gray-600 transform transition-transform ${openIndex === index ? "rotate-180" : ""
+                                className={`w-5 h-5 text-gray-600 dark:text-white  transform transition-transform ${openIndex === index ? "rotate-180" : ""
                                     }`}
                                 fill="none"
                                 stroke="currentColor"
@@ -71,15 +71,15 @@ const PremiumAccordion = () => {
                             </svg>
                         </button>
                         {openIndex === index && (
-                            <div className="px-6 py-4 bg-gray-50">
+                            <div className="px-6 py-4 bg-gray-50 dark:bg-black dark:text-white">
                                 {Array.isArray(item.answer) ? (
-                                    <ul className="list-disc list-inside text-gray-700">
+                                    <ul className="list-disc list-inside text-gray-700 dark:text-white">
                                         {item.answer.map((point, idx) => (
                                             <li key={idx}>{point}</li>
                                         ))}
                                     </ul>
                                 ) : (
-                                    <p className="text-gray-700">{item.answer}</p>
+                                    <p className="text-gray-700 dark:text-white">{item.answer}</p>
                                 )}
                             </div>
                         )}

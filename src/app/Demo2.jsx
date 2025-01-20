@@ -35,9 +35,9 @@ const Demo2 = () => {
     return (
         <>
             <div className='text-center  lg:mt-[2rem]'>
-                <span className='block text-gray-700 text-2xl mb-10 font-semibold'>Our Training</span>
+                <span className='block text-gray-700 text-2xl mb-10 font-semibold dark:text-white'>Our Training</span>
             </div>
-            <div className="flex justify-center items-center cursor-pointer bg-[#f1dff2]  h-[30rem]">
+            <div className="flex justify-center items-center cursor-pointer bg-[#f1dff2] dark:bg-slate-900 h-[30rem]">
                 <Carousel plugins={[
                     Autoplay({
                         delay: 2000,
@@ -49,7 +49,7 @@ const Demo2 = () => {
                                 return (
                                     <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
 
-                                        <div className="bg-gradient-to-b from-white to-purple-50 max-w-sm lg:h-[350px] h-[300px] rounded-xl overflow-hidden border border-gray-500  hover:scale-100 transform transition duration-300 ease-in-out">
+                                        <div className="dark:bg-customGray bg-[#F0FBFC] max-w-sm lg:h-[350px] h-[300px] rounded-xl overflow-hidden border border-gray-500  hover:scale-100 transform transition duration-300 ease-in-out">
                                             <div className="relative w-full lg:h-[250px] h-[170px] overflow-hidden">
                                                 <Image
                                                     className="w-full h-full object-cover rounded-t-xl transition-transform duration-300 ease-in-out hover:scale-110"
@@ -59,7 +59,7 @@ const Demo2 = () => {
 
                                             </div>
                                             <div className="px-6 py-4 flex-1 flex flex-col">
-                                                <div className="font-semibold text-[15px]  text-gray-800 mb-2 text-center">
+                                                <div className="font-semibold text-[15px] dark:text-white text-gray-800 mb-2 text-center">
                                                     {items.description}
                                                 </div>
                                             </div>
@@ -75,10 +75,10 @@ const Demo2 = () => {
             </div>
 
             <div className='text-center mt-[3rem]'>
-                <span className='block text-gray-700 lg:text-2xl text-xl mb-2 font-semibold'>For Online Training and Certification</span>
+                <span className='dark:text-white block text-gray-700 lg:text-2xl text-xl mb-2 font-semibold'>For Online Training and Certification</span>
             </div>
             <div className='text-center mt-[35px] mb-5'>
-                <Button variant="outline" className="w-[15rem] bg-purple-50 h-[3rem]"   >Visit Vitual BH Academy</Button>
+                <Button variant="outline" className="w-[15rem] bg-purple-50 h-[3rem] dark:text-black dark:hover:text-white"   >Visit Vitual BH Academy</Button>
             </div>
         </>
     )
