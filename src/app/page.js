@@ -5,8 +5,8 @@ import Card from './components/ui/Card'
 import EmblaCarousel from '@/components/EmblaCarousel/EmblaCarousel'
 import Training from './components/ui/Training'
 import LearningJourney from './components/ui/LearningJourney'
-import Map from './components/ui/Map'
-import Demo2 from '@/app/Demo2'
+import Map from '@/app/components/ui/Map'
+import Demo2 from './Demo2'
 const Home = () => {
   return (
     <>

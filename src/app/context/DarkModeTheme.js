@@ -1,20 +1,26 @@
-'use client'
-
+'use client';
 
 import React, { createContext, useEffect, useState } from 'react';
 
 export const DarkModeContext = createContext(null);
 
 const DarkModeTheme = (props) => {
-    const [isDarkMode, setIsDarkMode] = useState(() => {
-        const storedValue = localStorage.getItem('darkMode');
-        return storedValue === 'true';
-    });
+    const [isDarkMode, setIsDarkMode] = useState(false);
+
+    useEffect(() => {
+        // Access localStorage only in the client
+        if (typeof window !== 'undefined') {
+            const storedValue = localStorage.getItem('darkMode');
+            setIsDarkMode(storedValue === 'true');
+        }
+    }, []);
 
     const toggleDarkMode = () => {
         const newMode = !isDarkMode;
         setIsDarkMode(newMode);
-        localStorage.setItem('darkMode', newMode);
+        if (typeof window !== 'undefined') {
+            localStorage.setItem('darkMode', newMode);
+        }
     };
 
     useEffect(() => {

@@ -3,10 +3,8 @@
 import {useContext} from 'react';
 import { LearningJourneyData } from '../data/data';
 import Image from 'next/image';
-import { DarkModeContext } from '@/app/context/DarkModeTheme';
 
 const LearningJourney = () => {
-        const { isDarkMode, toggleDarkMode } = useContext(DarkModeContext);
     
     return (
         <div className="py-16">
@@ -15,7 +13,7 @@ const LearningJourney = () => {
                 {
                     LearningJourneyData.map((items, index) => {
                         return (
-                            <div key={index} className={` ${isDarkMode? 'bg-customGray':'bg-[#F0FBFC]'}  cursor-pointer p-6 h-[335px] text-center ease-in-out delay-150 duration-300 hover:-translate-y-1 hover:scale-110 `}>
+                            <div key={index} className="bg-[#F0FBFC]  cursor-pointer p-6 h-[335px] text-center ease-in-out delay-150 duration-300 hover:-translate-y-1 hover:scale-110" >
                                 <div className="mb-10 mt-4">
                                     <Image className=" mx-auto" src={items.image} alt="Description" width={90} height={90} />
                                 </div>

@@ -1,6 +1,6 @@
 "use client"
 
-import {useContext} from 'react';
+import { useContext } from 'react';
 import { Button } from "@/components/ui/button"
 import { GraduationCap } from 'lucide-react';
 import Image from 'next/image'
@@ -15,7 +15,6 @@ import im8 from '../../assets/CourseCategories/CC8.png';
 import im9 from '../../assets/CourseCategories/CC9.png';
 import im10 from '../../assets/CourseCategories/CC10.png';
 import Link from 'next/link'
-import { DarkModeContext } from '@/app/context/DarkModeTheme';
 
 let CardData = [
     {
@@ -79,11 +78,10 @@ import {
 } from "../../../components/ui/carousel"
 
 const Card = () => {
-  const { isDarkMode, toggleDarkMode } = useContext(DarkModeContext);
     return (
         <>
             <div className='text-center lg:mt-[4rem] mt-[4rem]'>
-                <span className={`block ${isDarkMode? "text-white":""}  text-gray-700 text-2xl mb-2 font-semibold`}>Explore Course Categories</span>
+                <span className="block text-gray-700 text-2xl mb-2 font-semibol">Explore Course Categories</span>
                 <span>Courses available in 11 languages</span>
             </div>
 
@@ -116,7 +114,7 @@ const Card = () => {
                 </Carousel>
             </div>
             <div className='text-center mt-[35px] mb-5'>
-                <Link href='/courses'> <Button variant="outline" className={`${isDarkMode?"text-black":""}  w-[15rem] bg-purple-50 h-[3rem]`} >Browse All Courses</Button></Link>
+                <Link href='/courses'> <Button variant="outline" className=" w-[15rem] bg-purple-50 h-[3rem]" >Browse All Courses</Button></Link>
             </div>
         </>
     )
