@@ -18,7 +18,7 @@ import t1 from '../../src/app/assets/Training/t1.png';
 import t3 from '../../src/app/assets/Training/t3.png';
 import t4 from '../../src/app/assets/Training/t4.png';
 import t5 from '../../src/app/assets/Training/t5.png';
-
+import { useRouter } from 'next/navigation'
 
 
 
@@ -31,7 +31,7 @@ const images = [
 ];
 
 const Demo2 = () => {
-
+    const router = useRouter()
     return (
         <>
             <div className='text-center  lg:mt-[2rem]'>
@@ -78,7 +78,7 @@ const Demo2 = () => {
                 <span className='dark:text-white block text-gray-700 lg:text-2xl text-xl mb-2 font-semibold'>For Online Training and Certification</span>
             </div>
             <div className='text-center mt-[35px] mb-5'>
-                <Button variant="outline" className="w-[15rem] bg-purple-50 h-[3rem] dark:text-black dark:hover:text-white"   >Visit Vitual BH Academy</Button>
+                <Button onClick={() => router.push('/courses')} variant="outline" className="w-[15rem] bg-purple-50 h-[3rem] dark:text-black dark:hover:text-white"   >Visit Vitual BH Academy</Button>
             </div>
         </>
     )
