@@ -15,6 +15,8 @@ import im8 from '../../assets/CourseCategories/CC8.png';
 import im9 from '../../assets/CourseCategories/CC9.png';
 import im10 from '../../assets/CourseCategories/CC10.png';
 import Link from 'next/link'
+import CoursesProvider from '@/app/context/CoursesProvider';
+
 
 let CardData = [
     {
@@ -76,8 +78,12 @@ import {
     CarouselNext,
     CarouselPrevious,
 } from "../../../components/ui/carousel"
+import { CourseContext } from '@/app/context/CoursesProvider';
 
 const Card = () => {
+
+    const { typeCounts } = useContext(CourseContext);
+
     return (
         <>
             <div className='text-center lg:mt-[4rem] mt-[4rem]'>
