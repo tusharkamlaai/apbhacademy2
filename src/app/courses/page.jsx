@@ -1,53 +1,23 @@
 'use client'
 
-import { useState, useEffect } from 'react';
+import { useContext } from 'react';
 import { Menu, X, Video, BrickWall, Users } from 'lucide-react';
 import { Input } from "@/components/ui/input";
-import { courses } from '../components/data/data';
 import dynamic from "next/dynamic";
+import { CourseContext } from '../context/CoursesProvider';
+
 
 const Page = () => {
-    const [isOpen, setIsOpen] = useState(false);
-    const [data] = useState(courses);
-    const [selectedType, setSelectedType] = useState(null);
-    const [searchData, setSearchData] = useState('')
-
-    console.log(data, '???')
-
-    const filterData = data.filter((item) => {
-        const isTypeMatch = item.type.toLowerCase().includes(searchData.toLowerCase());
-        const isNameMatch = item.courses.some(course =>
-            course.name.toLowerCase().includes(searchData.toLowerCase())
-        );
-        return isTypeMatch || isNameMatch;
-    });
 
 
-
-
-    const toggleSidebar = () => {
-        if (window.innerWidth < 768) {
-            setIsOpen(!isOpen);
-        }
-    };
-
-    const handleSelectType = (type) => {
-        setSelectedType(type);
-        toggleSidebar();
-        setSearchData('')
-    };
-
-
-    useEffect(() => {
-        const handleResize = () => {
-            setIsOpen(window.innerWidth >= 768);
-        };
-
-        handleResize();
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
-
+    const { isOpen,
+        data,
+        selectedType,
+        searchData,
+        setSearchData,
+        filterData,
+        toggleSidebar,
+        handleSelectType } = useContext(CourseContext)
 
     return (
         <div>

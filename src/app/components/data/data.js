@@ -1,13 +1,22 @@
 import teacher from '../../assets/teachers.png';
 import growth from '../../assets/growth.png';
 import delivery from '../../assets/delivery.png';
-
+import im1 from '../../assets/CourseCategories/CC1.png';
+import im2 from '../../assets/CourseCategories/CC2.png';
+import im3 from '../../assets/CourseCategories/CC3.png';
+import im4 from '../../assets/CourseCategories/CC4.png';
+import im5 from '../../assets/CourseCategories/CC5.png';
+import im6 from '../../assets/CourseCategories/CC6.png';
+import im7 from '../../assets/CourseCategories/CC7.png';
+import im8 from '../../assets/CourseCategories/CC8.png';
+import im9 from '../../assets/CourseCategories/CC9.png';
+import im10 from '../../assets/CourseCategories/CC10.png';
 
 export const courses = [
     {
         "type": "Wallpaper",
         "count": 1,
-        "image": "https://apbhacademy.com/uploads//courses/6350df876d43b--.jpg_0011_wallpaper1.png",
+        "image": im1,
         "courses": [
             {
                 "name": "Wallpaper",
@@ -23,7 +32,7 @@ export const courses = [
     {
         "type": "Exterior Textures",
         "count": 3,
-        "image": "https://apbhacademy.com/uploads//courses/6350df6f71aba--.jpg_0001_Exterior-Designer-Finishes.png",
+        "image": im2,
         "courses": [
             {
                 "name": "Stone Finishes",
@@ -57,7 +66,7 @@ export const courses = [
     {
         "type": "Waterproofing",
         "count": 1,
-        "image": "https://apbhacademy.com/uploads//courses/6350df67086cd--.jpg_0010_waterproofing2.png",
+        "image": im3,
         "courses": [
             {
                 "name": "Basic Waterproofing-Interior, Exterior, Sealants & Admixtures",
@@ -73,7 +82,7 @@ export const courses = [
     {
         "type": "Interior Textures",
         "count": 11,
-        "image": "https://apbhacademy.com/uploads//courses/6350df5d30af5--.jpg_0009_3D-Effect-Finishes.png",
+        "image": im4,
         "courses": [
             {
                 "name": "3D Effect Finishes",
@@ -179,7 +188,7 @@ export const courses = [
     {
         "type": "Wood Finishes",
         "count": 2,
-        "image": "https://apbhacademy.com/uploads//courses/6350df4a3eda7--.jpg_0012_PU-Finishes.png",
+        "image": im5,
         "courses": [
             {
                 "name": "PU Finishes",
@@ -204,7 +213,7 @@ export const courses = [
     {
         "type": "Mechanisation",
         "count": 1,
-        "image": "https://apbhacademy.com/uploads//courses/6350df414ffd5--.jpg_0015_mechanized3.png",
+        "image": im6,
         "courses": [
             {
                 "name": "Mechanized Painting-Sanders, Mixers & Measuring Tools",
@@ -220,7 +229,7 @@ export const courses = [
     {
         "type": "Sanitization",
         "count": 1,
-        "image": "https://apbhacademy.com/uploads//courses/6350df2e73ce3--.jpg_0004_Basic-Sanitization-Course.png",
+        "image": im7,
         "courses": [
             {
                 "name": "Sanitization",
@@ -236,7 +245,7 @@ export const courses = [
     {
         "type": "Wall Paint",
         "count": 1,
-        "image": "https://apbhacademy.com/uploads//courses/6350df233cfb9--.jpg_0003_Emulsion-System.png",
+        "image": im8,
         "courses": [
             {
                 "name": "Emulsion System",
@@ -252,7 +261,7 @@ export const courses = [
     {
         "type": "Metal",
         "count": 1,
-        "image": "https://apbhacademy.com/uploads//courses/6350df1b22189--.jpg_0013_Metal-Care-System.png",
+        "image": im9,
         "courses": [
             {
                 "name": "Metal",
@@ -268,7 +277,7 @@ export const courses = [
     {
         "type": "Soft Skill",
         "count": 2,
-        "image": "https://apbhacademy.com/uploads//courses/63aadc0092f7c-Skills-12.png",
+        "image": im10,
         "courses": [
             {
                 "name": "5 Star Customer Service - Contractor painter",
