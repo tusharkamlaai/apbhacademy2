@@ -12,28 +12,47 @@ import { Label } from "../../../components/ui/label"
 import Link from 'next/link'
 
 
-const LoginPage = () => {
+const page = () => {
     return (
         <>
-            <div className="flex justify-center items-center mt-40">
+            <div className="flex justify-center items-center mt-32">
                 <Card className="lg:w-[400px] w-[90%] shadow-lg rounded-lg">
                     <CardHeader>
                         <CardTitle className="text-center text-xl font-bold mt-5">
-                            Login with Phone Number
+                            Register
                         </CardTitle>
                         <p className="text-center text-sm text-gray-500 mt-2">
-                            Please enter your phone number to continue
+                            Please enter your below details
                         </p>
                     </CardHeader>
                     <CardContent>
                         <form>
-                            <div className="grid w-full items-center gap-6 mt-5">
+                            <div className="grid w-full items-center gap-6">
+                                <div className="flex flex-col space-y-2">
+                                    <Label htmlFor="phone" className="text-sm dark:text-white font-medium text-gray-700">
+                                        Name:
+                                    </Label>
+                                    <Input
+                                        type="text"
+                                        placeholder="Enter your name"
+                                        className="border-gray-300 focus:border-purple-500 focus:ring-purple-500"
+                                    />
+                                </div>
+                                <div className="flex flex-col space-y-2">
+                                    <Label htmlFor="phone" className="text-sm dark:text-white font-medium text-gray-700">
+                                        Profession:
+                                    </Label>
+                                    <Input
+                                        type="text"
+                                        placeholder="Enter your profession"
+                                        className="border-gray-300 focus:border-purple-500 focus:ring-purple-500"
+                                    />
+                                </div>
                                 <div className="flex flex-col space-y-2">
                                     <Label htmlFor="phone" className="text-sm dark:text-white font-medium text-gray-700">
                                         Phone:
                                     </Label>
                                     <Input
-                                        id="phone"
                                         type="tel"
                                         placeholder="Enter your phone number"
                                         className="border-gray-300 focus:border-purple-500 focus:ring-purple-500"
@@ -44,9 +63,8 @@ const LoginPage = () => {
                                         Password:
                                     </Label>
                                     <Input
-                                        id="phone"
                                         type="password"
-                                        placeholder="Enter your phone password"
+                                        placeholder="Enter your password"
                                         className="border-gray-300 focus:border-purple-500 focus:ring-purple-500"
                                     />
                                 </div>
@@ -61,9 +79,9 @@ const LoginPage = () => {
                             Submit
                         </Button>
                         <div className="mt-4 text-sm text-gray-500">
-                            Don't have an account?{' '}
-                            <Link href="/auth/register" className="text-purple-600 hover:underline">
-                                Sign Up
+                            Already have an account?{' '}
+                            <Link href="/auth/login" className="text-purple-600 hover:underline">
+                                Login
                             </Link>
                         </div>
                     </CardFooter>
@@ -73,4 +91,4 @@ const LoginPage = () => {
     )
 }
 
-export default LoginPage
+export default page

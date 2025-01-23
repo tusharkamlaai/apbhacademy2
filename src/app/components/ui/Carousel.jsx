@@ -22,7 +22,7 @@ const PremiumCarousel = () => {
     };
 
     return (
-        <div className="relative w-full lg:mt-24 mt-20 lg:h-[630px] h-[330px] overflow-hidden">
+        <div className="relative w-full lg:mt-24 mt-20 lg:h-[630px] h-[250px] overflow-hidden">
             {/* Images */}
             {images.map((image, index) => (
                 <div

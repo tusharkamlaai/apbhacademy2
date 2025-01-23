@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 import { useState } from 'react';
 
 const page = () => {
-    const [selectedLanguage, setSelectedLanguage] = useState(null);
+    const [selectedLanguage, setSelectedLanguage] = useState('English');
 
     const router = useRouter();
 
@@ -14,7 +14,7 @@ const page = () => {
         { name: "ಕನ್ನಡ", englishName: "Kannada" },
         { name: "தமிழ்", englishName: "Tamil" },
         { name: "ગુજરાતી", englishName: "Gujarati" },
-        { name: "English", englishName: "English" },
+        { name: "English", englishName: "" },
         { name: "മലയാളം", englishName: "Malayalam" },
         { name: "తెలుగు", englishName: "Telugu" },
         { name: "मराठी", englishName: "Marathi" },
@@ -45,7 +45,6 @@ const page = () => {
                             </Button>
                         ))
                     }
-
 
                 </div>
                 <div className="grid lg:grid-cols-3 grid-cols-1 md:grid-cols-2 gap-4 mt-8">
