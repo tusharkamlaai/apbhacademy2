@@ -22,7 +22,7 @@ const page = () => {
                             Register
                         </CardTitle>
                         <p className="text-center text-sm text-gray-500 mt-2">
-                            Please enter your below details
+                        Please provide your details below.
                         </p>
                     </CardHeader>
                     <CardContent>
