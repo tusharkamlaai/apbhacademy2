@@ -1,7 +1,10 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import { useRouter } from 'next/navigation'
+
 
 const OnlineTraining = () => {
+    const router = useRouter()
     return (
         <>
             <div className='text-center mt-[3rem]'>
