@@ -18,7 +18,7 @@ if (typeof window !== 'undefined') {
 const Map = () => {
     const [isMounted, setIsMounted] = useState(false);
     const [isMapFocused, setIsMapFocused] = useState(false);
-
+    const [isTouchActive, setIsTouchActive] = useState(false);
     const storeLocations = [
         { lat: 16.5151, lng: 80.6321, name: "MCA Vijayawada, Asian Paints, Sy-448/2, Dno: 54-11-12n, 4th Floor, Sai Odessey Building, Gurunanak Colony Road, Vijayawada - 520008" },
         { lat: 16.5062, lng: 80.6480, name: "MCA Vijayawada" },
@@ -99,7 +99,7 @@ const Map = () => {
                 <span className='block text-gray-700 text-2xl mb-8 font-semibold dark:text-white'>Our Presence</span>
             </div>
             <div className='justify-center flex py-3'>
-                <MapContainer center={[20.5937, 78.9629]} zoom={5} className='lg:h-[70vh] lg:w-[80%]  h-[50vh] w-[80%]' scrollWheelZoom={isMapFocused}>
+                <MapContainer center={[20.5937, 78.9629]} zoom={4} className='lg:h-[70vh] lg:w-[80%]  h-[50vh] w-[80%]' scrollWheelZoom={isMapFocused}>
                     <TileLayer
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     />

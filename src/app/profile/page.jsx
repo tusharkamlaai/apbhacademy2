@@ -67,7 +67,7 @@ export default function page() {
                                     className="mt-1 w-full px-4 py-2 border rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
                                 />
                             </div>
-                            <div>
+                            {/* <div>
                                 <label className="block dark:text-white text-sm font-medium text-gray-600">Profession</label>
                                 <input
                                     type="text"
@@ -76,13 +76,13 @@ export default function page() {
                                     onChange={handleChange}
                                     className="mt-1 w-full px-4 py-2 border rounded-lg shadow-sm focus:ring-2 focus:ring-blue-500 focus:outline-none"
                                 />
-                            </div>
+                            </div> */}
                         </div>
                     ) : (
                         <div className="space-y-6">
                             <div>
                                 <h1 className="text-2xl dark:text-white font-bold text-gray-800">{profile.name}</h1>
-                                <p className="text-sm dark:text-white text-gray-500">Profession: {profile.profession}</p>
+                                {/* <p className="text-sm dark:text-white text-gray-500">Profession: {profile.profession}</p> */}
                             </div>
                             <div className="grid grid-cols-2 gap-4">
                                 <div>

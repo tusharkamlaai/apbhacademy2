@@ -40,7 +40,7 @@ const page = () => {
                                 </div>
                                 <div className="flex flex-col space-y-2">
                                     <Label htmlFor="phone" className="text-sm dark:text-white font-medium text-gray-700">
-                                        Profession:
+                                        Location:
                                     </Label>
                                     <Input
                                         type="text"
@@ -55,16 +55,6 @@ const page = () => {
                                     <Input
                                         type="tel"
                                         placeholder="Enter your phone number"
-                                        className="border-gray-300 focus:border-purple-500 focus:ring-purple-500"
-                                    />
-                                </div>
-                                <div className="flex flex-col space-y-2">
-                                    <Label htmlFor="phone" className="text-sm dark:text-white font-medium text-gray-700">
-                                        Password:
-                                    </Label>
-                                    <Input
-                                        type="password"
-                                        placeholder="Enter your password"
                                         className="border-gray-300 focus:border-purple-500 focus:ring-purple-500"
                                     />
                                 </div>

@@ -72,15 +72,40 @@ const Page = () => {
         setPlayed(newTime);
     };
 
+    // const handleFullscreen = () => {
+    //     if (containerRef.current) {
+    //         if (document.fullscreenElement) {
+    //             document.exitFullscreen();
+    //         } else {
+    //             containerRef.current.requestFullscreen();
+    //         }
+    //     }
+    // };
+
     const handleFullscreen = () => {
         if (containerRef.current) {
             if (document.fullscreenElement) {
                 document.exitFullscreen();
+                // Reset the orientation when exiting fullscreen
+                if (screen.orientation && screen.orientation.unlock) {
+                    screen.orientation.unlock();
+                }
             } else {
-                containerRef.current.requestFullscreen();
+                containerRef.current.requestFullscreen().then(() => {
+                    // Automatically rotate the screen to landscape mode in fullscreen
+                    if (screen.orientation && screen.orientation.lock) {
+                        screen.orientation.lock("landscape").catch((err) => {
+                            console.error("Failed to lock screen orientation:", err);
+                        });
+                    }
+                }).catch((err) => {
+                    console.error("Failed to enter fullscreen mode:", err);
+                });
             }
         }
     };
+
+    
 
     const handleCardClick = (videoId) => {
         setCurrentVideo(videoId);
@@ -179,7 +204,7 @@ const Page = () => {
                                     </div>
                                 </div>
 
-                                <div className="flex items-center space-x-2 flex-grow mt-3 px-8">
+                                {/* <div className="flex items-center space-x-2 flex-grow mt-3 px-8">
                                     <span className="text-gray-300 text-xs md:text-sm">Progress</span>
                                     <input
                                         type="range"
@@ -191,7 +216,7 @@ const Page = () => {
                                         className="w-full"
                                         disabled
                                     />
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>

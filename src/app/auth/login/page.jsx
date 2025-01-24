@@ -39,17 +39,7 @@ const LoginPage = () => {
                                         className="border-gray-300 focus:border-purple-500 focus:ring-purple-500"
                                     />
                                 </div>
-                                <div className="flex flex-col space-y-2">
-                                    <Label htmlFor="phone" className="text-sm dark:text-white font-medium text-gray-700">
-                                        Password:
-                                    </Label>
-                                    <Input
-                                        id="phone"
-                                        type="password"
-                                        placeholder="Enter your phone password"
-                                        className="border-gray-300 focus:border-purple-500 focus:ring-purple-500"
-                                    />
-                                </div>
+                                
                             </div>
                         </form>
                     </CardContent>
