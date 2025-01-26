@@ -44,7 +44,7 @@ const page = () => {
                                     </Label>
                                     <Input
                                         type="text"
-                                        placeholder="Enter your profession"
+                                        placeholder="Enter your location"
                                         className="border-gray-300 focus:border-purple-500 focus:ring-purple-500"
                                     />
                                 </div>

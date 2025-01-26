@@ -6,15 +6,20 @@ import LearningJourney from './components/ui/LearningJourney'
 import Map from '@/app/components/ui/Map'
 import OurTraining from './components/ui/OurTraining'
 import OnlineTraining from './components/ui/OnlineTraining'
+import FadeIn from 'react-fade-in';
+
+
 const Home = () => {
   return (
     <>
-      <Carousel />
-      <Card />
-      <LearningJourney />
-      <OurTraining />
-      <Map />
-      <OnlineTraining/>
+      <FadeIn>
+        <Carousel />
+        <Card />
+        <LearningJourney />
+        <OurTraining />
+        <Map />
+        <OnlineTraining />
+      </FadeIn>
     </>
   )
 }
