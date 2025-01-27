@@ -1,6 +1,8 @@
 'use client'
 
 import React, { useState } from "react";
+import { Fade } from "react-awesome-reveal";
+
 
 const accordionData = [
     {
@@ -42,51 +44,55 @@ const PremiumAccordion = () => {
     };
 
     return (
-        <div className="h-[100vh] bg-purple-50 dark:bg-customDark ">
-            <div className='text-center mt-[6rem] py-5'>
-                <span className='block text-gray-700 text-2xl mb-2 font-semibold dark:text-white'>Frequently Asked Questions.</span>
-            </div>
-            <div className="lg:w-[80%] w-[90%] mx-auto mt-6 bg-white border border-gray-200 rounded-[2px] shadow-lg">
-                {accordionData.map((item, index) => (
-                    <div key={index} className="border-b border-gray-300">
-                        <button
-                            className="w-full flex justify-between items-center py-4 px-6 bg-white dark:bg-slate-800"
-                            onClick={() => handleToggle(index)}
-                        >
-                            <span className="text-lg font-semibold text-gray-800 dark:text-white">{item.question}</span>
-                            <svg
-                                className={`w-5 h-5 text-gray-600 dark:text-white  transform transition-transform ${openIndex === index ? "rotate-180" : ""
-                                    }`}
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth={2}
-                                    d="M19 9l-7 7-7-7"
-                                />
-                            </svg>
-                        </button>
-                        {openIndex === index && (
-                            <div className="px-6 py-4 bg-gray-50 dark:bg-black dark:text-white">
-                                {Array.isArray(item.answer) ? (
-                                    <ul className="list-disc list-inside text-gray-700 dark:text-white">
-                                        {item.answer.map((point, idx) => (
-                                            <li key={idx}>{point}</li>
-                                        ))}
-                                    </ul>
-                                ) : (
-                                    <p className="text-gray-700 dark:text-white">{item.answer}</p>
+        <>
+            <Fade>
+                <div className="h-[100vh] bg-purple-50 dark:bg-customDark ">
+                    <div className='text-center mt-[6rem] py-5'>
+                        <span className='block text-gray-700 text-2xl mb-2 font-semibold dark:text-white'>Frequently Asked Questions.</span>
+                    </div>
+                    <div className="lg:w-[80%] w-[90%] mx-auto mt-6 bg-white border border-gray-200 rounded-[2px] shadow-lg">
+                        {accordionData.map((item, index) => (
+                            <div key={index} className="border-b border-gray-300">
+                                <button
+                                    className="w-full flex justify-between items-center py-4 px-6 bg-white dark:bg-slate-800"
+                                    onClick={() => handleToggle(index)}
+                                >
+                                    <span className="text-lg font-semibold text-gray-800 dark:text-white">{item.question}</span>
+                                    <svg
+                                        className={`w-5 h-5 text-gray-600 dark:text-white  transform transition-transform ${openIndex === index ? "rotate-180" : ""
+                                            }`}
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth={2}
+                                            d="M19 9l-7 7-7-7"
+                                        />
+                                    </svg>
+                                </button>
+                                {openIndex === index && (
+                                    <div className="px-6 py-4 bg-gray-50 dark:bg-black dark:text-white">
+                                        {Array.isArray(item.answer) ? (
+                                            <ul className="list-disc list-inside text-gray-700 dark:text-white">
+                                                {item.answer.map((point, idx) => (
+                                                    <li key={idx}>{point}</li>
+                                                ))}
+                                            </ul>
+                                        ) : (
+                                            <p className="text-gray-700 dark:text-white">{item.answer}</p>
+                                        )}
+                                    </div>
                                 )}
                             </div>
-                        )}
+                        ))}
                     </div>
-                ))}
-            </div>
-        </div>
+                </div>
+            </Fade>
+        </>
     );
 };
 

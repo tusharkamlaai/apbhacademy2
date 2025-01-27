@@ -5,7 +5,7 @@ import { Menu, X, Video, BrickWall, Users } from 'lucide-react';
 import { Input } from "@/components/ui/input";
 import dynamic from "next/dynamic";
 import { CourseContext } from '../context/CoursesProvider';
-
+import { Fade } from "react-awesome-reveal";
 
 const Page = () => {
 
@@ -43,7 +43,7 @@ const Page = () => {
                     }
                 </div>
             </div>
-
+            <Fade>
             {/* Main Content */}
             <div className={`flex-1 mt-[6.5rem] ${isOpen ? 'md:ml-64' : ''} transition-margin`}>
                 <div className="flex gap-5">
@@ -59,7 +59,7 @@ const Page = () => {
                                 onChange={(e) => setSearchData(e.target.value)} // Update search data
                                 value={searchData}
                                 placeholder="Search by name or type..."
-                                className="w-[30%] dark:border-white"
+                                className="lg:w-[30%] w-[80%] dark:border-white"
                             />
 
                         </span>
@@ -114,6 +114,7 @@ const Page = () => {
 
                 </div>
             </div>
+            </Fade>
         </div>
     );
 };
