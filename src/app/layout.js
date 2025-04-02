@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
             enableSystem
             disableTransitionOnChange
           >
-            <ScrollToTop />
+            {/* <ScrollToTop /> */}
             <Navbar />
             {children}
           </ThemeProvider>

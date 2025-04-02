@@ -84,11 +84,11 @@ const Page = () => {
                                                         <p className="text-sm mt-2 text-gray-900 dark:text-white">{course.description}</p>
                                                         <div className="mt-3">
                                                             <div className="flex gap-3">
-                                                                <div className="text-sm text-gray-500 ml-1 flex gap-3">
+                                                                <div className="text-sm text-gray-500 ml-1 flex gap-3 dark:text-white">
                                                                     <span><Video /></span>
                                                                     <span>{course.videos} Videos</span>
                                                                 </div>
-                                                                <div className="text-sm text-gray-500 ml-1 flex gap-2">
+                                                                <div className="text-sm text-gray-500 ml-1 flex gap-2 dark:text-white">
                                                                     <span><BrickWall style={{ height: "20px" }} /></span>
                                                                     <span>{course.type}</span>
                                                                 </div>
